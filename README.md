@@ -6,7 +6,9 @@
 
 ## 📚 About This Project
 
-The pbo-class repository is a collection of code examples and assignments focused on Object-Oriented Programming (PBO). The examples, originally developed as part of an assignment for a PBO course, demonstrate key concepts such as object creation, state manipulation, method invocation, and testing. Key classes include [`Titik.java`](PBO01%20Object%20Orientation/object_orientation/src/Titik.java) (representing a point) and [`Garis.java`](PBO01%20Object%20Orientation/object_orientation/src/Garis.java) (representing a line). Additional programs like [`App.java`](PBO01%20Object%20Orientation/object_orientation/src/App.java), [`MTitik.java`](PBO01%20Object%20Orientation/object_orientation/src/MTitik.java), [`MTitikRefactored.java`](PBO01%20Object%20Orientation/object_orientation/src/MTitikRefactored.java), and [`MGaris.java`](PBO01%20Object%20Orientation/object_orientation/src/MGaris.java) serve to demonstrate and test these concepts.
+The pbo-class repository is a collection of code examples and assignments focused on Object-Oriented Programming (PBO). The examples, originally developed as part of an assignment for a PBO course, demonstrate key concepts such as object creation, state manipulation, method invocation, and testing.
+
+<!-- Key classes include [`Titik.java`](PBO01%20Object%20Orientation/object_orientation/src/Titik.java) (representing a point) and [`Garis.java`](PBO01%20Object%20Orientation/object_orientation/src/Garis.java) (representing a line). Additional programs like [`App.java`](PBO01%20Object%20Orientation/object_orientation/src/App.java), [`MTitik.java`](PBO01%20Object%20Orientation/object_orientation/src/MTitik.java), [`MTitikRefactored.java`](PBO01%20Object%20Orientation/object_orientation/src/MTitikRefactored.java), and [`MGaris.java`](PBO01%20Object%20Orientation/object_orientation/src/MGaris.java) serve to demonstrate and test these concepts. -->
 
 ---
 
