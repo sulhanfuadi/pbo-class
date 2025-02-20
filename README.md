@@ -1,5 +1,3 @@
-Collecting workspace information```Markdown
-
 # pbo-class
 
 **A repository containing various code examples and assignments for Object-Oriented Programming (PBO). This repository is dedicated to exploring and implementing core OOP concepts through practical Java code.**
@@ -103,7 +101,3 @@ Special thanks to the educators and practitioners in Object-Oriented Programming
 ---
 
 Happy coding and enjoy exploring Object-Oriented Programming with Java!
-
-```
-
-```
