@@ -1,0 +1,17 @@
+# Ignore Java class files
+*.class
+
+# Ignore compiled output folders
+/bin/
+target/
+build/
+
+# Ignore IDE specific files and folders
+.vscode/
+
+# Ignore log files
+*.log
+
+# Ignore specific files and folders
+Master - Praktikum PBO 24 25.txt
+2025-Praktikum-1-ObjectOrientation.pdf
