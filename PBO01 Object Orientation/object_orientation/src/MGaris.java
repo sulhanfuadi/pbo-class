@@ -35,23 +35,46 @@ public class MGaris {
     System.out.println();
 
     // 3. Uji fungsi isSejajar
-    System.out.println(">> Pengujian isSejajar");
-    // Membuat garis lain dengan gradien yang sama seperti g2
-    Garis g3 = new Garis(new Titik(0, 0), new Titik(6, 10)); // gradien = (10-0)/(6-0)=1.67 (approx)
+    System.out.println(">> Pengujian isSejajar (False Case)");
+    // Garis dengan gradien berbeda
+    Garis g3 = new Garis(new Titik(0, 0), new Titik(6, 10)); // gradien ≈ 1.67
     System.out.println("Garis g2 dan g3 sejajar? " + g2.isSejajar(g3));
     System.out.println();
 
+    System.out.println(">> Pengujian isSejajar (True Case)");
+    // Membuat dua garis dengan gradien yang sama (misal, slope = 1)
+    Garis g5 = new Garis(new Titik(0, 0), new Titik(2, 2)); // gradien = 1
+    Garis g6 = new Garis(new Titik(1, 1), new Titik(3, 3)); // gradien = 1
+    System.out.println("Garis g5 dan g6 sejajar? " + g5.isSejajar(g6));
+    System.out.println();
+
     // 4. Uji fungsi isTegakLurus
-    System.out.println(">> Pengujian isTegakLurus");
-    // Membuat garis dengan gradien negatif resiprokal dari g2
-    Garis g4 = new Garis(new Titik(0, 0), new Titik(6, -8));
+    System.out.println(">> Pengujian isTegakLurus (False Case)");
+    // Garis dengan gradien yang bukan négatif resiprokal
+    Garis g4 = new Garis(new Titik(0, 0), new Titik(6, -8)); // gradien = -8/6 = -1.33 (approx)
     System.out.println("Garis g2 dan g4 tegak lurus? " + g2.isTegakLurus(g4));
+    System.out.println();
+
+    System.out.println(">> Pengujian isTegakLurus (True Case)");
+    // Membuat dua garis dengan gradien yang saling negatif resiprokal
+    Garis g7 = new Garis(new Titik(0, 0), new Titik(2, 2)); // gradien = 1
+    Garis g8 = new Garis(new Titik(0, 0), new Titik(2, -2)); // gradien = -1
+    System.out.println("Garis g7 dan g8 tegak lurus? " + g7.isTegakLurus(g8));
     System.out.println();
 
     // 5. Uji Print Persamaan Garis
     System.out.println(">> Pengujian Print Persamaan Garis");
     System.out.print("Persamaan garis g2: ");
     g2.printPersamaanGaris();
+    System.out.println();
+
+    // Contoh: garis yang dibuat dari titik (-2,0) dan (0,4) mempunyai persamaan y =
+    // 2x + 4.
+    Titik a = new Titik(-2, 0);
+    Titik b = new Titik(0, 4);
+    Garis gEx = new Garis(a, b);
+    System.out.print("Persamaan garis dari titik (-2,0) dan (0,4): ");
+    gEx.printPersamaanGaris();
     System.out.println();
 
     // 6. Tampilkan jumlah objek Garis yang dibuat (menggunakan counterGaris)
