@@ -1,0 +1,13 @@
+# Hasil kompilasi Java
+*.class
+/bin/
+
+# Folder IDE (VS Code)
+.vscode/
+
+# File log (jika ada)
+*.log
+
+# Direktori build (jika ada)
+target/
+build/
