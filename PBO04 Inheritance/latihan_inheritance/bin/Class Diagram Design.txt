@@ -1,0 +1,11 @@
+Class Diagram Design
+
+                   Pegawai
+                      |
+           +----------+----------+
+           |                     |
+        Dosen                  Tendik
+           |
+   +-------+--------+
+   |                |
+DosenTetap       DosenTamu
