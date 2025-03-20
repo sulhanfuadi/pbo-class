@@ -1,0 +1,73 @@
+@startuml
+
+' Definisi interface Pajak
+interface Pajak <<interface>> {
+  + hitungPajak() : double
+}
+
+' Kelas abstrak Manusia dengan atribut dan metode setter-getter
+abstract class Manusia <<abstract>> {
+  - nama : String
+  - tgl_mulai_kerja : Date
+  - alamat : String
+  - pendapatan : double
+  - counterMns : int <<static>>
+  --
+  + cetakInfo() : void
+  # hitungMasaKerja() : int <<abstract>>
+  --
+  ' Setter dan Getter untuk atribut Manusia
+  + getNama() : String
+  + setNama(nama : String) : void
+  + getTglMulaiKerja() : Date
+  + setTglMulaiKerja(tgl : Date) : void
+  + getAlamat() : String
+  + setAlamat(alamat : String) : void
+  + getPendapatan() : double
+  + setPendapatan(pendapatan : double) : void
+}
+
+' Kelas PNS yang mewarisi Manusia dan mengimplementasikan interface Pajak
+class PNS {
+  - nip : String
+  - counterPns : int <<static>>
+  --
+  ' Setter dan Getter untuk atribut PNS
+  + getNip() : String
+  + setNip(nip : String) : void
+  + hitungPajak() : double
+}
+
+' Kelas Pengusaha yang mewarisi Manusia dan mengimplementasikan interface Pajak
+class Pengusaha {
+  - npwp : String
+  - counterPengusaha : int <<static>>
+  --
+  ' Setter dan Getter untuk atribut Pengusaha
+  + getNpwp() : String
+  + setNpwp(npwp : String) : void
+  + hitungPajak() : double
+}
+
+' Kelas Petani yang mewarisi Manusia dan mengimplementasikan interface Pajak
+class Petani {
+  - asal_daerah : String
+  - counterPetani : int <<static>>
+  --
+  ' Setter dan Getter untuk atribut Petani
+  + getAsalDaerah() : String
+  + setAsalDaerah(asal : String) : void
+  + hitungPajak() : double
+}
+
+' Hubungan pewarisan: PNS, Pengusaha, dan Petani mewarisi Manusia
+Manusia <|-- PNS
+Manusia <|-- Pengusaha
+Manusia <|-- Petani
+
+' Masing-masing subclass mengimplementasikan interface Pajak
+PNS ..|> Pajak
+Pengusaha ..|> Pajak
+Petani ..|> Pajak
+
+@enduml
