@@ -246,13 +246,13 @@ public class RuangCounter {
 ## Cara Menjalankan Program
 
 1. Pastikan JDK (Java Development Kit) telah terinstal di komputer Anda.
-2. Buat package dengan nama "fsm" di project Java Anda.
-3. Salin semua file kelas Java ke dalam package tersebut.
+2. Atur project Java Anda dengan benar.
+3. Salin semua file kelas Java ke project tersebut.
 4. Jalankan program dengan menjalankan kelas Main.java.
 
 ```bash
-javac fsm/*.java
-java fsm.Main
+javac *.java
+java Main
 ```
 
 ## Contoh Output Program
