@@ -1,0 +1,144 @@
+@startuml
+
+abstract class Ruang {
+  - String kode
+  - double panjang
+  - double lebar
+  - double tinggi
+  - int kapasitas
+  + Ruang(String, double, double, double, int)
+  + String getKode()
+  + double getPanjang()
+  + double getLebar()
+  + double getTinggi()
+  + int getKapasitas()
+  + double hitungLuas()
+  + {abstract} double hitungBiayaKebersihan()
+  + String tampilkanInfo()
+}
+
+class Departemen {
+  - String nama
+  - String ketuaDepartemen
+  - double tarifBiayaKebersihan
+  + Departemen(String, String, double)
+  + String getNama()
+  + String getKetuaDepartemen()
+  + double getTarifBiayaKebersihan()
+  + void setKetuaDepartemen(String)
+  + void setTarifBiayaKebersihan(double)
+  + String tampilkanInfo()
+}
+
+abstract class RuangFakultas {
+  - static double tarifBiayaKebersihan
+  + RuangFakultas(String, double, double, double, int)
+  + static void setTarifBiayaKebersihan(double)
+  + static double getTarifBiayaKebersihan()
+  + double hitungBiayaKebersihan()
+}
+
+abstract class RuangDepartemen {
+  - Departemen departemen
+  + RuangDepartemen(String, double, double, double, int, Departemen)
+  + Departemen getDepartemen()
+  + double hitungBiayaKebersihan()
+  + String tampilkanInfo()
+}
+
+class RuangKelas {
+  - int jumlahKursiTersedia
+  - int jumlahKursiRusak
+  + RuangKelas(String, double, double, double, int, int, int)
+  + int getJumlahKursiTersedia()
+  + int getJumlahKursiRusak()
+  + void setJumlahKursiTersedia(int)
+  + void setJumlahKursiRusak(int)
+  + int hitungTotalKursi()
+  + String tampilkanInfo()
+}
+
+abstract class RuangLaboratorium {
+  - String namaLab
+  - double hargaSewa
+  + RuangLaboratorium(String, double, double, double, int, String, double)
+  + String getNamaLab()
+  + double getHargaSewa()
+  + void setHargaSewa(double)
+  + {abstract} String getJenisLab()
+  + String tampilkanInfo()
+}
+
+class LabKomputer {
+  - int jumlahKomputer
+  + LabKomputer(String, double, double, double, int, String, double, int)
+  + int getJumlahKomputer()
+  + void setJumlahKomputer(int)
+  + String getJenisLab()
+  + String tampilkanInfo()
+}
+
+class LabNonKomputer {
+  - List<String> mataKuliah
+  - String kategoriLab
+  + LabNonKomputer(String, double, double, double, int, String, double, String)
+  + String getKategoriLab()
+  + void tambahMataKuliah(String)
+  + List<String> getMataKuliah()
+  + String getJenisLab()
+  + String tampilkanInfo()
+}
+
+class RuangKantorDepartemen {
+  - int jumlahMeja
+  - int jumlahKursi
+  - int jumlahLemari
+  + RuangKantorDepartemen(String, double, double, double, int, Departemen, int, int, int)
+  + int getJumlahMeja()
+  + int getJumlahKursi()
+  + int getJumlahLemari()
+  + String tampilkanInfo()
+}
+
+class RuangDosen {
+  - String namaDosen
+  - int jumlahMeja
+  - int jumlahKursi
+  + RuangDosen(String, double, double, double, int, Departemen, String, int, int)
+  + String getNamaDosen()
+  + int getJumlahMeja()
+  + int getJumlahKursi()
+  + String tampilkanInfo()
+}
+
+class RuangCounter {
+  - List<Ruang> daftarRuang
+  + RuangCounter()
+  + void tambahRuang(Ruang)
+  + int hitungJumlahRuangKelas()
+  + int hitungJumlahLab()
+  + int hitungJumlahLabKomputer()
+  + int hitungJumlahLabNonKomputer()
+  + int hitungJumlahRuangKantorDepartemen()
+  + int hitungJumlahRuangDosen()
+  + String tampilkanStatistik()
+}
+
+class Main {
+  + {static} void main(String[])
+  + {static} double hitungTotalBiayaKebersihan(RuangFakultas...)
+  + {static} double hitungTotalBiayaKebersihan(RuangDepartemen...)
+}
+
+Ruang <|-- RuangFakultas
+Ruang <|-- RuangDepartemen
+RuangFakultas <|-- RuangKelas
+RuangFakultas <|-- RuangLaboratorium
+RuangLaboratorium <|-- LabKomputer
+RuangLaboratorium <|-- LabNonKomputer
+RuangDepartemen <|-- RuangKantorDepartemen
+RuangDepartemen <|-- RuangDosen
+RuangDepartemen "1" *-- "1" Departemen : memiliki >
+RuangCounter "1" o-- "*" Ruang : memantau >
+
+@enduml

@@ -1,0 +1,40 @@
+RESPONSI PRAKTIKUM PBO 25 MARET 2025
+
+---
+
+FSM sedang mendata seluruh ruang yang dimiliki untuk menghitung biaya kebersihan dari
+masing-masing ruang. Seluruh ruang memiliki kode, panjang, lebar, tinggi, dan kapasitas.
+Ruang-ruang tersebut ada yang berupa ruang departemen, ruang kelas, ruang laboratorium,
+dan ruang dosen.
+
+Setiap ruang kelas memiliki jumlah kursi tersedia dan jumlah kursi rusak yang berbedabeda.
+
+Setiap laboratorium pasti memiliki nama laboratorium serta harga sewa dan dikategorikan
+berdasarkan isinya, yaitu ada laboratorium komputer yang memiliki jumlah komputer yang
+berbeda-beda dan laboratorium non-komputer seperti laboratorium biologi, fisika dan
+kimia yang menghandle sejumlah matakuliah tertentu setiap labnya.
+
+Setiap ruang departemen memiliki informasi jumlah meja, kursi, dan lemari yang ada di
+dalamnya.
+
+Setiap ruang dosen memiliki nama dari dosen yang bersangkutan serta memiliki jumlah
+kursi dan meja yang ada didalamnya.
+
+Ruang kelas dan laboratorium adalah miliki fakultas sehingga memiliki tarif biaya kebersihan
+yang sama, sedangkan ruang departemen dan ruang dosen melekat pada departemen
+tertentu dan setiap departemen menerapkan tarif biaya kebersihan masing-masing. Setiap
+departemen juga memiliki nama dan ketua departemen.
+
+Setiap ruang nantinya dapat memperlihatkan informasi ruang secara detail, biaya kebersihan
+serta sewanya dan juga didapatkan jumlah dari masing-masing jenis ruang maupun
+kategorinya. Biaya kebersihan dihitung dari panjang x lebar ruangan dikalikan dengan tarif
+biaya kebersihan yang berlaku untuk ruangan tersebut.
+
+---
+
+Instruksi:
+Implementasikan ke dalam bahasa pemrograman Java kelas-kelas yang diperlukan untuk kasus
+di atas dengan menerapkan konsep enkapuslasi, pewarisan, overloading, dan overriding yang
+tepat dalam paradigma pemrograman berorientasi objek. Selanjutnya, buatlah sebuah main
+class untuk mendemokan contoh pemanggilan/penggunaan pada kelas-kelas yang telah
+dibuat tersebut.
