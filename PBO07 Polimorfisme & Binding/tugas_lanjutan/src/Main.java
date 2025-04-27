@@ -1,61 +1,70 @@
 /*
  * Nama File : Main.java
- * Deskripsi : Kelas Main untuk menguji kelas Anabul dan subclass-nya
- * Pembuat : Sulhan Fuadi (24060123130115)
- * Tanggal : 24 April 2025
+ * Deskripsi : Demo polimorfisme + simulasi perubahan data lengkap
+ * Pembuat   : Sulhan Fuadi (24060123130115)
+ * Tanggal   : 27 April 2025
 */
 
 import java.util.ArrayList;
 
 public class Main {
   public static void main(String[] args) {
-    // Buat objek-objek Anabul
-    Anabul anabul1 = new Kucing("Kitty");
-    Anabul anabul2 = new Anjing("Doggy");
-    Anabul anabul3 = new Burung("Tweety");
-
-    // Buat ArrayList untuk menyimpan Anabul
+    // 1. Inisialisasi koleksi Anabul
     ArrayList<Anabul> koleksi = new ArrayList<>();
-    koleksi.add(anabul1);
-    koleksi.add(anabul2);
-    koleksi.add(anabul3);
+    koleksi.add(new Kucing("Kitty", 2, "Betina", "Putih"));
+    koleksi.add(new Anjing("Doggy", 3, "Jantan", "Cokelat"));
+    koleksi.add(new Burung("Tweety", 1, "Betina", "Kuning"));
 
-    // Simulasikan gerak dan suara setiap anabul
+    // 2. Simulasi awal (info + aksi lengkap)
+    System.out.println("=== SIMULASI AWAL ===");
     for (Anabul a : koleksi) {
-      System.out.println("=== " + a.getNama() + " ===");
+      System.out.println(">> " + a.getNama());
+      a.info();
       a.gerak();
       a.bersuara();
+      a.makan();
+      a.tidur();
+      if (a instanceof Kucing)
+        ((Kucing) a).scratch();
+      else if (a instanceof Anjing)
+        ((Anjing) a).fetch();
+      else if (a instanceof Burung)
+        ((Burung) a).terbangTinggi();
+      System.out.println();
+    }
+
+    // 3. Simulasi perubahan data
+    System.out.println("=== SIMULASI PERUBAHAN DATA ===");
+    koleksi.get(0).setNama("Kitty Missy");
+    koleksi.get(0).setUmur(3);
+    koleksi.get(1).setWarna("Hitam");
+    koleksi.get(2).setJenisKelamin("Jantan");
+    koleksi.get(2).setUmur(2);
+
+    // 4. Tampilkan state setelah perubahan (info saja)
+    System.out.println("\n--- STATE SETELAH PERUBAHAN ---");
+    for (Anabul a : koleksi) {
+      System.out.println(">> " + a.getNama());
+      a.info();
+    }
+
+    // 5. Simulasi penuh setelah perubahan
+    System.out.println("\n=== SIMULASI SETELAH PERUBAHAN ===");
+    for (Anabul a : koleksi) {
+      System.out.println(">> " + a.getNama());
+      a.gerak();
+      a.bersuara();
+      a.makan();
+      a.tidur();
+
+      // Simulasi aksi spesifik -- riil nilai tambah ini mah hehe
+      if (a instanceof Kucing)
+        ((Kucing) a).scratch();
+      else if (a instanceof Anjing)
+        ((Anjing) a).fetch();
+      else if (a instanceof Burung)
+        ((Burung) a).terbangTinggi();
       System.out.println();
     }
   }
 }
-
-/*
- * SE-cuil PELAJARAN DARI TUGAS LANJUTAN (Polimorfisme):
- * 1. Polimorfisme Inclusion: Objek dari kelas turunan (Kucing, Anjing, Burung)
- * dapat diperlakukan sebagai objek dari kelas induknya (Anabul). Hal ini
- * terlihat saat objek-objek tersebut dimasukkan ke dalam ArrayList<Anabul>.
- * Kita dapat menyimpan berbagai jenis anabul dalam satu koleksi yang sama.
- *
- * 2. Method Overriding: Kelas Kucing, Anjing, dan Burung meng-override
- * (menyediakan implementasi spesifik) metode abstrak gerak() dan bersuara()
- * yang didefinisikan di kelas Anabul. Setiap kelas anak memberikan perilaku
- * unik untuk metode-metode tersebut sesuai dengan jenis hewannya.
- *
- * 3. Dynamic Binding (Runtime Polymorphism): Ketika loop `for (Anabul a :
- * koleksi)` dijalankan, pemanggilan metode `a.gerak()` dan `a.bersuara()` akan
- * mengeksekusi implementasi metode dari objek *aktual* yang dirujuk oleh `a`
- * pada saat runtime (misalnya, Kucing.gerak(), Anjing.bersuara(), dll.),
- * bukan metode dari kelas Anabul (yang abstrak). Java secara dinamis
- * menentukan metode mana yang harus dipanggil berdasarkan tipe objek
- * sebenarnya.
- *
- * 4. Manfaat:
- * - Fleksibilitas: Kode di `main` dapat bekerja dengan berbagai jenis Anabul
- * tanpa perlu mengetahui tipe spesifiknya saat kompilasi.
- * - Ekstensibilitas: Mudah untuk menambahkan jenis Anabul baru (misalnya,
- * Hamster) dengan membuat kelas baru yang mewarisi Anabul dan meng-override
- * metodenya, tanpa perlu mengubah kode loop di `main`.
- * - Kode Lebih Rapi: Menghindari penggunaan banyak `if-else` atau `instanceof`
- * untuk memeriksa tipe objek dan memanggil metode yang sesuai.
- */
