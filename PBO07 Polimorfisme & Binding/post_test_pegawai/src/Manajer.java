@@ -6,10 +6,22 @@
  */
 
 public class Manajer extends Pegawai {
+  // atribut untuk menyimpan tunjangan
   private int tunjangan = 700_000;
 
+  // konstructor untuk inisialisasi nama pegawai
   public Manajer(String nama) {
     super(nama);
+  }
+
+  // selektor
+  public int getTunjangan() {
+    return tunjangan;
+  }
+
+  // mutator
+  public void setTunjangan(int tunjangan) {
+    this.tunjangan = tunjangan;
   }
 
   @Override

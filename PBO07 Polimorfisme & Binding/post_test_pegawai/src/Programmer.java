@@ -6,10 +6,22 @@
  */
 
 public class Programmer extends Pegawai {
+  // atribut untuk menyimpan bonus
   private int bonus = 450_000;
 
+  // konstructor untuk inisialisasi nama pegawai
   public Programmer(String nama) {
     super(nama);
+  }
+
+  // selektor
+  public int getBonus() {
+    return bonus;
+  }
+
+  // mutator
+  public void setBonus(int bonus) {
+    this.bonus = bonus;
   }
 
   @Override
