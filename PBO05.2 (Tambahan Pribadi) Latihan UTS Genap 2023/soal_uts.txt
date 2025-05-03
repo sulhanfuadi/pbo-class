@@ -1,0 +1,15 @@
+detail_latihan.txt
+
+---
+
+1.
+Sebuah universitas memiliki sejumlah fakultas. Setiap fakultas memiliki nama, tarif UKT, dan gaji pokok. Civitas akademika dalam universitas terdiri atas mahasiswa dan karyawan. Setiap civitas akademika memiliki nama dan email. Setiap mahasiswa memiliki NIM, semester dan terdaftar di suatu fakultas tertentu. Biaya UKT mahasiswa sesuai dengan fakultasnya dan semester dengan ketentuan biaya UKT berkurang 5% setiap semesternya. Karyawan universitas terdiri atas dosen dan tenaga kependidikan (tendik). Setiap karyawan memiliki NIP dan masa kerja. Dosen bekerja pada fakultas tertentu, sedangkan tendik bekerja langsung pada universitas. Dosen mendapat gaji sesuai gaji pokok fakultas ditambah masa kerja x 1% x gaji pokok, sedangkan tendik mendapat gaji pokok sebesar Rp4.000.000,- ditambah masa kerja x 1% x gaji pokok. Setiap kategori civitas akademika, baik mahasiswa, dosen, maupun tendik memiliki counter untuk mencatat jumlah instance dari masing-masing kategori tersebut, serta memiliki method untuk menampilkan informasi seluruh atribut, baik yang dimiliki sendiri atau yang didapat dari relasi dengan class lainnya. Mahasiswa dapat menampilkan biaya UKT, sedangkan dosen dan tendik dapat menampilkan gaji.
+Desainlah class diagram yang tepat untuk kasus tersebut dengan menerapkan konsep enkapsulasi, pewarisan, overloading, dan overriding dalam paradigma pemrograman berorientasi objek. Identifikasi atribut beserta tipe datanya, konstruktor, dan semua method yang relevan pada setiap class serta relasi antar class yang ada. Untuk konstruktor dan method tuliskan secara lengkap signature-nya.
+
+2. Buatlah implementasi dari class diagram yang dibahas pada soal nomor 1 ke dalam Bahasa Java:
+a. Nomor kursi ganjil: implementasi untuk class Mahasiswa beserta class lain yang berelasi dengannya.
+b. Nomor kursi genap: implementasi untuk class Dosen beserta class lain yang berelasi dengannya. 
+c. Berikanlah contoh deklarasi dan pembuatan instance dari class tersebut pada main program dan pemanggilan method untuk menampilkan informasi dari class tersebut. Tampilkan juga jumlah instance yang dibuat pada class tersebut.  
+(Untuk hubungan pewarisan cukup membuat implementasi untuk satu level di atasnya.)
+
+3. Paradigma pemrograman berorientasi objek menerapkan konsep enkapsulasi, pewarisan, overloading, dan overriding. Jelaskan dan tunjukkan sebuah contoh penerapan setiap konsep tersebut pada desain atau implementasi yang telah didapat dari jawaban soal sebelumnya.

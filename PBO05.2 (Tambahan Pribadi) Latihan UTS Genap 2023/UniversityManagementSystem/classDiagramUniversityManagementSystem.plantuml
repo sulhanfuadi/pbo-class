@@ -1,0 +1,113 @@
+@startuml
+
+' Abstract CivitasAkademika Class
+abstract class CivitasAkademika {
+  - nama: String
+  - email: String
+  # counter: static int
+  + CivitasAkademika(nama: String, email: String): void
+  + getNama(): String
+  + setNama(nama: String): void
+  + getEmail(): String
+  + setEmail(email: String): void
+  + getCounter(): static int
+  + {abstract} tampilkanInfo(): void
+}
+
+' Universitas Class
+class Universitas {
+  - nama: String
+  - daftarFakultas: ArrayList<Fakultas>
+  + Universitas(nama: String): void
+  + getNama(): String
+  + setNama(nama: String): void
+  + tambahFakultas(fakultas: Fakultas): void
+  + getDaftarFakultas(): ArrayList<Fakultas>
+}
+
+' Fakultas Class
+class Fakultas {
+  - nama: String
+  - tarifUKT: double
+  - gajiPokok: double
+  + Fakultas(nama: String, tarifUKT: double, gajiPokok: double): void
+  + getNama(): String
+  + setNama(nama: String): void
+  + getTarifUKT(): double
+  + setTarifUKT(tarifUKT: double): void
+  + getGajiPokok(): double
+  + setGajiPokok(gajiPokok: double): void
+}
+
+' Mahasiswa Class
+class Mahasiswa {
+  - nim: String
+  - semester: int
+  - fakultas: Fakultas
+  - counter: static int
+  + Mahasiswa(nama: String, email: String, nim: String, semester: int, fakultas: Fakultas): void
+  + getNim(): String
+  + setNim(nim: String): void
+  + getSemester(): int
+  + setSemester(semester: int): void
+  + getFakultas(): Fakultas
+  + setFakultas(fakultas: Fakultas): void
+  + hitungUKT(): double
+  + tampilkanInfo(): void
+  + getCounter(): static int
+}
+
+' Abstract Karyawan Class
+abstract class Karyawan {
+  - nip: String
+  - masaKerja: int
+  - counter: static int
+  # Karyawan(nama: String, email: String, nip: String, masaKerja: int): void
+  + getNip(): String
+  + setNip(nip: String): void
+  + getMasaKerja(): int
+  + setMasaKerja(masaKerja: int): void
+  + {abstract} hitungGaji(): double
+  + getCounter(): static int
+}
+
+' Dosen Class
+class Dosen {
+  - fakultas: Fakultas
+  - counter: static int
+  + Dosen(nama: String, email: String, nip: String, masaKerja: int, fakultas: Fakultas): void
+  + getFakultas(): Fakultas
+  + setFakultas(fakultas: Fakultas): void
+  + hitungGaji(): double
+  + tampilkanInfo(): void
+  + getCounter(): static int
+}
+
+' TenagaKependidikan Class
+class TenagaKependidikan {
+  - counter: static int
+  - GAJI_POKOK: static final double = 4000000
+  + TenagaKependidikan(nama: String, email: String, nip: String, masaKerja: int): void
+  + hitungGaji(): double
+  + tampilkanInfo(): void
+  + getCounter(): static int
+}
+
+' Inheritance relationships
+CivitasAkademika <|-- Mahasiswa
+CivitasAkademika <|-- Karyawan
+Karyawan <|-- Dosen
+Karyawan <|-- TenagaKependidikan
+note on link: Inheritance: Mahasiswa dan Karyawan adalah tipe spesifik dari CivitasAkademika,\nDosen dan TenagaKependidikan adalah tipe spesifik dari Karyawan.\nSemua mewarisi atribut dan method dari parent class.
+
+' Association relationships with proper multiplicity and role names
+Universitas "1" o-- "*" Fakultas : memiliki >
+note on link: Aggregation: Universitas memiliki beberapa Fakultas,\nFakultas dapat ada tanpa Universitas tertentu
+
+Fakultas "1" -- "*" Mahasiswa : < mendaftar di
+note on link: Association: Mahasiswa mendaftar di satu Fakultas tertentu,\nFakultas dapat memiliki banyak Mahasiswa
+
+Fakultas "1" -- "*" Dosen : < bekerja di
+note on link: Association: Dosen bekerja di satu Fakultas tertentu,\nFakultas dapat memiliki banyak Dosen
+
+@enduml
