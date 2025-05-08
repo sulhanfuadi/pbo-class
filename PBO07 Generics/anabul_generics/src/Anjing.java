@@ -15,7 +15,7 @@ public class Anjing extends Anabul {
   // Override metode gerak() dari superclass Anabul
   @Override
   public void gerak() {
-    System.out.println(nama + " bergerak dengan berlari.");
+    System.out.println(nama + " bergerak dengan melata.");
   }
 
   // Override metode bersuara() dari superclass Anabul
