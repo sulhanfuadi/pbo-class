@@ -13,7 +13,7 @@ public class MySQLPersonDAO implements PersonDAO {
     // membuat koneksi, nama db,user,password menyesuaikan
     Class.forName("com.mysql.cj.jdbc.Driver");
     Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/pbo?useSSL=false", "root", "Sulhan_Mysql");
+        "jdbc:mysql://localhost:3306/pbo?useSSL=false", "root", "rahasia");
     // kerjakan mysql query
     String query = "INSERT INTO person(name) VALUES('" + name + "')";
     System.out.println(query);
